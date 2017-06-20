@@ -1,0 +1,13 @@
+<form #regForm='ngForm' (submit)='onSubmit(note_obj, regForm)'>
+  Note: <input type="text" name="note"
+  [(ngModel)]='note_obj.note'
+  #note='ngModel'
+  required
+  minlength='3'
+  maxlength='100'>
+  <input [disabled]='!regForm.valid' type="submit" value="Add Note">
+</form>
+
+<div *ngFor='let note of notes'>
+  {{ note.note }}
+</div>
